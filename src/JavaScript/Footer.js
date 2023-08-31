@@ -1,11 +1,13 @@
 import React from "react";
-import Logo from "../images/Logo.svg";
+import Resturant from "../images/restaurant.jpg";
 
 function Footer() {
   return (
     <footer>
-      <img alt="footer" src={Logo} />
-      <div>
+      <div className="footer-img">
+        <img alt="footer" src={Resturant} />
+      </div>
+      <div className="footer-links">
         <h3>Navigation</h3>
         <ul>
           <li>Home</li>
@@ -17,7 +19,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div>
+      <div className="footer-links">
         <h3>Contact</h3>
         <ul>
           <li>Phone Number</li>
@@ -26,7 +28,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div>
+      <div className="footer-links">
         <h3>Social Media</h3>
         <ul>
           <li>Facebook</li>

@@ -1,7 +1,9 @@
 import React from "react";
-import GreekSalad from "../images/greek salad.jpg";
-import Bruchetta from "../images/bruchetta.svg";
-import LemonCake from "../images/lemon dessert.jpg";
+import GreekSalad from "../images/greek salad.png";
+import Bruchetta from "../images/bruchetta.png";
+import LemonCake from "../images/lemon dessert.png";
+import Avatar from "../images/customer.png";
+import Rating from "../images/rating.png";
 
 function Main() {
   const menu = [
@@ -29,69 +31,80 @@ function Main() {
   ];
 
   const reviews = [
-    { name: "anyone", img: "", review: "good" },
-    { name: "anyone", img: "", review: "good" },
-    { name: "anyone", img: "", review: "good" },
-    { name: "anyone", img: "", review: "good" },
+    { name: "Anyone Name", img: Avatar, rate: Rating, review: `"good"` },
+    { name: "Anyone Name", img: Avatar, rate: Rating, review: `"good"` },
+    { name: "Anyone Name", img: Avatar, rate: Rating, review: `"good"` },
+    { name: "Anyone Name", img: Avatar, rate: Rating, review: `"good"` },
   ];
 
   return (
     <main>
-      <div>
-        <div>
+      <section>
+        <div className="section-head">
           <h1>This Weeks Special!</h1>
           <button>Online Menu</button>
         </div>
-        <div>
+        <div className="dishes">
           {menu?.map((value, index) => (
-            <div key={"dish" + index}>
-              <div>
-                <img alt="dish" src={value?.img} />
+            <div key={"dish" + index} className="dish-card">
+              <img alt="dish" src={value?.img} />
+              <div className="details">
+                <div className="name-price">
+                  <h3>{value?.dish}</h3>
+                  <h4>{value?.price}</h4>
+                </div>
+                <p>{value?.details}</p>
+                <h4>Order a Delivery</h4>
               </div>
-              <h3>{value?.dish}</h3>
-              <h4>{value?.price}</h4>
-              <p>{value?.details}</p>
-              <h4>Order a Delivery</h4>
             </div>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div>
+      <aside>
         <h1>Testimonials</h1>
-        {reviews?.map((value, index) => (
-          <div key={"testimonial" + index}>
-            <h3>{value?.name}</h3>
-            <div>
-              <img alt="dish" src={value?.img} />
-            </div>
-            <p>{value?.review}</p>
-          </div>
-        ))}
-      </div>
+        <div className="testimonial">
+          {reviews?.map((value, index) => (
+            <blockquote key={"testimonial" + index}>
+              <img className="rate" alt="dish" src={value?.rate} />
+              <img className="profile" alt="dish" src={value?.img} />
+              <h3>{value?.name}</h3>
+              <p>{value?.review}</p>
+            </blockquote>
+          ))}
+        </div>
+      </aside>
 
-      <div>
-        <div>
+      <article>
+        <div className="article-col1">
           <h1>Little Lemon</h1>
           <h3>California</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at
-            ex leo. Maecenas enim sem, laoreet at nulla ac, luctus scelerisque
-            massa. Praesent ut molestie nisi. Aliquam arcu lorem, auctor
-            condimentum blandit id, lobortis in nisi. Ut diam justo, euismod in
-            accumsan id, vehicula sit amet tellus. Pellentesque porttitor elit
-            lacus, vitae lacinia magna ultricies quis. Etiam vitae tellus et mi
-            hendrerit consequat. In dictum ligula in elit euismod malesuada.
-            Curabitur varius augue id tempus ultricies. Mauris suscipit porta
-            odio, et pretium nibh scelerisque ut.
+            Little Lemon is owned by two Italian brothers, Mario and Adrian, who
+            moved to the United States to pursue their shared dream of owning a
+            restaurant.
+            <br />
+            <br /> To craft the menu, Mario relies on family recipes and his
+            experience as a chef in Italy. Adrian does all the marketing for the
+            restaurant and led the effort to expand the menu beyond classic
+            Italian to incorporate additional cuisines from the Mediterranean
+            region.
           </p>
         </div>
 
-        <div>
-          <img src={require("../images/Mario and Adrian b.jpg")} alt="shef" />
-          <img src={require("../images/restaurant.jpg")} alt="resturant" />
+        <div className="article-col2">
+          <img
+            className="article-img1"
+            src={require("../images/Mario and Adrian A.jpg")}
+            alt="resturant"
+          />
+          <img
+            className="article-img2"
+            src={require("../images/Mario and Adrian b.jpg")}
+            alt="shef"
+          />
         </div>
-      </div>
+      </article>
     </main>
   );
 }

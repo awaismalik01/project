@@ -3,8 +3,11 @@ import Logo from "../images/Logo.svg";
 
 function Nav() {
   return (
-    <nav>
-      <img src={Logo} alt="logo" />
+    <nav className="nav">
+      <div className="logo">
+        <img src={Logo} alt="logo" />
+      </div>
+
       <ul>
         <li>
           <a href="#home">Home</a>
