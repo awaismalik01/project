@@ -1,19 +1,18 @@
 import React from "react";
-import Nav from "./JavaScript/Nav";
-import Header from "./JavaScript/Header";
-import Main from "./JavaScript/Main";
-import Footer from "./JavaScript/Footer";
 import "./css/style.css";
 import "./css/mobileStyle.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import BookingPage from "./pages/BookingPage";
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" index element={<Home />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
