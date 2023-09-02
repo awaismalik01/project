@@ -49,15 +49,17 @@ function BookingForm({ availableTimes, dispatch }) {
           <label htmlFor="res-date">Choose date</label>
           <input
             type="date"
+            aria-label={"Select your reservation date"}
             data-testid="res-date"
             id="res-date"
             {...formik.getFieldProps("date")}
           />
-          <span data-testid="error-date">asv{formik.errors.date}</span>
+          <span data-testid="error-date">{formik.errors.date}</span>
 
           <label htmlFor="res-time">Choose time</label>
           <select
             data-testid="res-time"
+            aria-label={"Select your reservation time"}
             id="res-time"
             {...formik.getFieldProps("time")}
           >
@@ -71,6 +73,7 @@ function BookingForm({ availableTimes, dispatch }) {
 
           <label htmlFor="guests">Number of guests</label>
           <input
+            aria-label={"Enter number of guests for reservation"}
             type="number"
             placeholder="1"
             min="1"
@@ -83,6 +86,7 @@ function BookingForm({ availableTimes, dispatch }) {
 
           <label htmlFor="occasion">Occasion</label>
           <select
+            aria-label={"What type of occasion"}
             data-testid="occasion"
             id="occasion"
             {...formik.getFieldProps("occasion")}
@@ -93,6 +97,7 @@ function BookingForm({ availableTimes, dispatch }) {
           <span>{formik.errors.occasion}</span>
 
           <input
+            aria-label={"Submit to make your reservation"}
             type="submit"
             data-testid="make-reservation"
             value="Make Your reservation"
