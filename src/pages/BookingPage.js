@@ -1,31 +1,16 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import Nav from "../JavaScript/Nav";
 import Footer from "../JavaScript/Footer";
 import BookingForm from "../JavaScript/BookingForm";
+import { initialTimes, updateTimes } from "../utils/Utils";
 
 function BookingPage() {
-  const initialTimes = () => [
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ];
-
-  const updateTimes = () => {
-    return [...initialTimes()];
-  };
-
-  const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes);
+  const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes());
 
   return (
     <>
       <Nav />
-      <BookingForm
-        availableTimes={availableTimes}
-        setAvailableTimes={dispatch}
-      />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
       <Footer />
     </>
   );
