@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import GreekSalad from "../images/greek salad.png";
 import Bruchetta from "../images/bruchetta.png";
 import LemonCake from "../images/lemon dessert.png";
@@ -6,6 +7,19 @@ import Avatar from "../images/customer.png";
 import Rating from "../images/rating.png";
 
 function Main() {
+  const location = useLocation();
+  const aboutSection = useRef();
+  const menuSection = useRef();
+
+  useEffect(() => {
+    if (location.hash === "#about") {
+      aboutSection.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (location.hash === "#menu") {
+      menuSection.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   const menu = [
     {
       img: GreekSalad,
@@ -39,7 +53,7 @@ function Main() {
 
   return (
     <main>
-      <section>
+      <section ref={menuSection}>
         <div className="section-head">
           <h1>This Weeks Special!</h1>
           <button>Online Menu</button>
@@ -75,7 +89,7 @@ function Main() {
         </div>
       </aside>
 
-      <article>
+      <article ref={aboutSection}>
         <div className="article-col1">
           <h1>Little Lemon</h1>
           <h3>California</h3>

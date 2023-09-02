@@ -150,7 +150,12 @@ footer ul {
 
 footer ul li {
   display: block;
+  color: white;
   font-size: 18px;
+}
+
+footer ul li a {
+  text-decoration: none;
   color: white;
 }
 
@@ -438,26 +443,26 @@ article > div {
   margin-bottom: 30px;
 }
 
-.confirmation .details {
+.confirmation .confirmationDetail {
   width: 22%;
   background-color: #495e57;
   border-radius: 20px;
   padding: 25px;
 }
 
-.details > h2 {
+.confirmationDetail > h2 {
   color: #f4ce14;
   font-size: 35px;
   font-weight: 500;
 }
 
-.details > p {
+.confirmationDetail > p {
   color: white;
   font-size: 18px;
   margin-bottom: 0;
 }
 
-.details > p > span {
+.confirmationDetail > p > span {
   font-weight: 700;
 }
 

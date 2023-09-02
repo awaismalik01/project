@@ -53,7 +53,7 @@ function BookingForm({ availableTimes, dispatch }) {
             id="res-date"
             {...formik.getFieldProps("date")}
           />
-          <span>{formik.errors.date}</span>
+          <span data-testid="error-date">asv{formik.errors.date}</span>
 
           <label htmlFor="res-time">Choose time</label>
           <select
@@ -67,7 +67,7 @@ function BookingForm({ availableTimes, dispatch }) {
               </option>
             ))}
           </select>
-          <span>{formik.errors.time}</span>
+          <span data-testid="error-time">{formik.errors.time}</span>
 
           <label htmlFor="guests">Number of guests</label>
           <input
@@ -79,7 +79,7 @@ function BookingForm({ availableTimes, dispatch }) {
             id="guests"
             {...formik.getFieldProps("guests")}
           />
-          <span>{formik.errors.guests}</span>
+          <span data-testid="error-guest">{formik.errors.guests}</span>
 
           <label htmlFor="occasion">Occasion</label>
           <select
@@ -96,6 +96,12 @@ function BookingForm({ availableTimes, dispatch }) {
             type="submit"
             data-testid="make-reservation"
             value="Make Your reservation"
+            disabled={
+              !!formik.errors.occasion ||
+              !!formik.errors.guests ||
+              !!formik.errors.time ||
+              !!formik.errors.date
+            }
           />
         </form>
       </div>

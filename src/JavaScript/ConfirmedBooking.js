@@ -20,7 +20,7 @@ function ConfirmedBooking() {
     <main>
       <div className="confirmation">
         <h1>Your Reservation is confirmed!</h1>
-        <div className="details">
+        <div className="confirmationDetail">
           <h2>Confirmation Details</h2>
           <p>
             <span>Occastion:</span> {booking?.occasion}

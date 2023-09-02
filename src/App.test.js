@@ -1,4 +1,4 @@
-import {render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { fetchAPI, initialTimes, submitApi, updateTimes } from "./utils/Utils";
 import BookingForm from "./JavaScript/BookingForm";
 import { MemoryRouter } from "react-router-dom";
@@ -66,4 +66,32 @@ describe("BookingForm", () => {
     const result = submitApi(formData);
     expect(result).toBe(true);
   });
+
+  test("BookingForm Validation Test", async () => {
+    render(
+      <MemoryRouter>
+        <BookingForm
+          availableTimes={initialTimes()}
+          dispatch={jest.fn((action) => action)}
+        />
+      </MemoryRouter>
+    );
+
+    const chooseDateField = screen.getByTestId("res-date");
+    fireEvent.change(chooseDateField, { target: { value: "2023-09-02" } });
+    expect(chooseDateField.value).toBe("2023-09-02");
+
+    const chooseTimeField = screen.getByTestId("res-time");
+    fireEvent.change(chooseTimeField, { target: { value: "20:00" } });
+    expect(chooseTimeField.value).toBe("20:00");
+
+    const chooseGuestsField = screen.getByTestId("guests");
+    fireEvent.change(chooseGuestsField, { target: { value: 5 } });
+    expect(chooseGuestsField.value).toBe("5");
+
+    const chooseOccasionField = screen.getByTestId("occasion");
+    fireEvent.change(chooseOccasionField, { target: { value: "Anniversary" } });
+    expect(chooseOccasionField.value).toBe("Anniversary");
+  });
+
 });

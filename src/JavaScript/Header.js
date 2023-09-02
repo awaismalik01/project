@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header>
       <div className="body">
@@ -11,7 +13,7 @@ function Header() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button>Reserve a Table</button>
+          <button onClick={() => navigate("/booking")}>Reserve a Table</button>
         </div>
 
         <div className="image">

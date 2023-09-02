@@ -186,4 +186,60 @@
   .article-col2 {
     display: none;
   }
+
+  /* ------------------------------------------------------------ */
+
+  .formGroup > h1 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .formGroup > form {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .formGroup label {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .formGroup label ~ input,
+  .formGroup label ~ select {
+    font-size: 20px;
+    font-weight: 700;
+
+    padding: 10px 15px;
+  }
+
+  .formGroup label ~ input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .formGroup label ~ input[type="submit"]:hover {
+    background-color: #c2a618;
+  }
+
+  .formGroup label ~ span {
+    font-size: 12px;
+  }
+
+  /* ------------------------------------------------------------ */
+  
+  .confirmation > h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .confirmation .confirmationDetail {
+    width: 80%;
+  }
+  
+  .confirmation > button {
+    width: 90%
+  }
+  
 }

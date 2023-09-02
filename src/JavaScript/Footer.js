@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Resturant from "../images/restaurant.jpg";
 
 function Footer() {
@@ -10,12 +11,24 @@ function Footer() {
       <div className="footer-links">
         <h3>Navigation</h3>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Reservations</li>
-          <li>Order Online</li>
-          <li>Login</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/#about">About</Link>
+          </li>
+          <li>
+            <Link to="/#menu">Menu</Link>
+          </li>
+          <li>
+            <Link to="/booking">Reservations</Link>
+          </li>
+          <li>
+            <Link to="/#order">Order Online</Link>
+          </li>
+          <li>
+            <Link to="#">Login</Link>
+          </li>
         </ul>
       </div>
 
